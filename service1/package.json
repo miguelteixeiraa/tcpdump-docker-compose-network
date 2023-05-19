@@ -1,0 +1,15 @@
+{
+  "name": "service1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server1.js",
+  "scripts": {
+    "serve": "node server1.js",
+    "test": "no test specified"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.17.0"
+  }
+}

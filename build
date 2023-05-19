@@ -1,0 +1,13 @@
+#!/bin/bash
+
+docker --version
+[[ $? -ne 0 ]] && echo "docker cli not found" && exit 1
+
+echo "build service1... "
+docker build service1 -t service1
+
+echo "build service2... "
+docker build service2 -t service2
+
+echo "build tcpdump... "
+docker build tcpdump -t tcpdump

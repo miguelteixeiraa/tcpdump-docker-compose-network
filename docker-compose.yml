@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  tcpdump:
+    container_name: tcpdump
+    image: tcpdump
+    network_mode: "service:service1"
+    networks:
+      docker-tcpdump-example:
+        aliases:
+          - tcpdump
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  service1:
+    container_name: service1
+    image: service1
+    networks:
+      docker-tcpdump-example:
+        aliases:
+          - service1
+    ports:
+      - 3001:3000
+
+  service2:
+    container_name: service2
+    image: service2
+    networks:
+      docker-tcpdump-example:
+        aliases:
+          - service2
+    ports:
+      - 3002:3000
+
+networks:
+  docker-tcpdump-example: null
