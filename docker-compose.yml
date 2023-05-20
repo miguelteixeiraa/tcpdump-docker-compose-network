@@ -7,6 +7,12 @@ services:
     network_mode: "service:service1"
     entrypoint: tcpdump -i eth0
 
+  httpdump:
+    container_name: httpdump
+    image: tcpdump
+    network_mode: "service:service1"
+    entrypoint: httpdump
+
   service1:
     container_name: service1
     image: service1
