@@ -5,12 +5,7 @@ services:
     container_name: tcpdump
     image: tcpdump
     network_mode: "service:service1"
-    networks:
-      docker-tcpdump-example:
-        aliases:
-          - tcpdump
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    entrypoint: tcpdump -i eth0
 
   service1:
     container_name: service1
